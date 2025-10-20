@@ -1,3 +1,15 @@
 a {
-  text-decoration: inherit;
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 10px;
+}
+
+li {
+  margin: 10px 0;
+  font-weight: bold;
 }
