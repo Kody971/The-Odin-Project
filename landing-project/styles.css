@@ -14,6 +14,7 @@ header {
 .logo {
   font-size: 24px;
   color: #f9faf8;
+  font-weight: bold;
 }
 
 h1 {
@@ -63,10 +64,22 @@ button {
   justify-content: space-between;
 }
 
+.placeholder-hero {
+  background-color: grey;
+  height: 230px;
+  width: 1200px;
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #information {
   display: flex;
   flex-direction: column;
   text-align: center;
+  background-color: #f9faf8;
+  padding: 10px;
 }
 
 h2 {
@@ -78,15 +91,35 @@ h2 {
 .container-article {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 3rem;
+  padding-bottom: 5rem;
+}
+
+article {
+  max-width: 150px;
+}
+
+article div {
+  border-radius: 10px;
+  border: 3px solid #3882f6;
+  height: 150px;
+  width: 150px;
+  margin-top: 10px;
+  background-color: #f9faf8;
 }
 
 blockquote {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: #e5e7eb;
   margin: 0;
+  padding: 5rem 0;
+}
+
+blockquote div {
+  max-width: 830px;
 }
 
 .quote {
@@ -96,21 +129,25 @@ blockquote {
   margin-bottom: 0;
 }
 
-cite {
-  align-self: flex-end;
+.quote-name {
+  font-weight: bolder;
+  font-size: 20px;
+  text-align: right;
+  margin-right: 2rem;
 }
 
-#cta {
+.cta-container {
   background-color: #3882f6;
-  padding: 3rem 10rem;
+  padding: 2rem 7rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
 }
 
-.cta-container {
+#cta {
   padding: 5rem 10rem;
+  background-color: #f9faf8;
 }
 
 #cta div {
