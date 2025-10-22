@@ -2,6 +2,7 @@ const prompt = require('prompt-sync')({ sigint: true })
 
 let humanScore = 0
 let computerScore = 0
+let draw = 0
 const arr = ['rock', 'paper', 'scissors']
 
 function random(array) {
@@ -23,6 +24,7 @@ function firstCharUpper(word) {
 
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {
+    draw++
     console.log(
       '=================================================\nDraw\n=================================================\n'
     )
@@ -51,9 +53,19 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-let rounds = 5
-while (rounds != 0) {
-  rounds--
-  console.log(`Score:\nuser(${humanScore})    comp(${computerScore})\n`)
-  playRound(getHumanChoice(), getComputerChoice())
+function playGame(rounds) {
+  while (rounds != 0) {
+    rounds--
+    console.log(
+      `Score:\nuser(${humanScore})    comp(${computerScore})    draw(${draw})\n`
+    )
+    playRound(getHumanChoice(), getComputerChoice())
+  }
+  if (rounds == 0) {
+    console.log(
+      `Score:\nuser(${humanScore})    comp(${computerScore})    draw(${draw})\n`
+    )
+  }
 }
+
+playGame(5)
