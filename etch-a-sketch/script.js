@@ -1,10 +1,10 @@
-let baseTotalBox = 16
+const baseTotalBox = 16
 
 const createBox = total => {
   for (let i = 0; i < total ** 2; i++) {
     const square = document.createElement('div')
-    square.style.height = Math.round(960 / total) + 'px'
-    square.style.width = Math.round(960 / total) + 'px'
+    square.style.height = Math.floor(960 / total) + 'px'
+    square.style.width = Math.floor(960 / total) + 'px'
     document.querySelector('.container').appendChild(square)
   }
 }
