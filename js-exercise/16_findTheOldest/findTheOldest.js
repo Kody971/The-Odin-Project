@@ -2,7 +2,6 @@ const findTheOldest = function (arr) {
   const averageBirthYear =
     arr.reduce((acc, curr) => acc + curr.yearOfBirth, 0) / arr.length - 1
   const allKey = arr.filter(item => !('yearOfDeath' in item))
-  console.log(allKey[0])
 
   if (allKey.length == 0 || allKey[0].yearOfBirth > averageBirthYear) {
     return arr.sort(
