@@ -1,0 +1,40 @@
+/* body {
+  overflow: hidden;
+} */
+
+.container {
+  background-color: gray;
+  max-width: 500px;
+  height: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.result {
+  height: 300px;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  max-width: 500px;
+  max-height: 600px;
+}
+
+.button-container > * {
+  font-size: 2rem;
+}
+
+.delete {
+  font-size: 1.5rem;
+}
+button {
+  width: 125px;
+  height: 120px;
+}
+
+.number0 {
+  flex-grow: 1;
+}
