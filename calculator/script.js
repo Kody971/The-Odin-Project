@@ -30,6 +30,7 @@ const subtract = (...val) => {
 }
 
 const checkArithmetic = val => {
+  console.log('pass')
   if (num2.textContent == 'Infinity') {
     return reset()
   }
@@ -38,10 +39,14 @@ const checkArithmetic = val => {
     arithmetic.textContent = val.value
     return
   }
+  if (!num1.textContent && !num2.textContent) {
+    return
+  }
   if (arithmetic.textContent) {
     arithmetic.textContent = val.value
     return
   }
+
   arithmetic.textContent = val.value
   num1.textContent = num2.textContent
   num2.textContent = ''

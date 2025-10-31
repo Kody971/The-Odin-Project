@@ -1,11 +1,12 @@
 body {
   background-color: black;
+  overflow: hidden;
 }
 
 .container {
   background-color: gray;
   max-width: 500px;
-  height: 900px;
+  height: 690px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -17,14 +18,26 @@ body {
   flex-direction: column;
 }
 
-.arithmetic,
-.num1,
-.num2 {
+.sub-container {
+  display: flex;
   height: 100px;
 }
 
+.arithmetic-container {
+  justify-content: end;
+}
+
+.num1-container {
+  align-items: center;
+}
+
+.num2-container {
+  justify-content: end;
+  align-items: end;
+}
+
 .arithmetic {
-  font-size: 1rem;
+  font-size: 3rem;
 }
 
 .num1 {
@@ -40,7 +53,7 @@ body {
   flex-wrap: wrap;
   width: 600px;
   max-width: 500px;
-  max-height: 600px;
+  max-height: 390px;
 }
 
 .button-container > * {
@@ -52,7 +65,7 @@ body {
 }
 button {
   width: 125px;
-  height: 120px;
+  height: 78px;
   border: none;
 }
 
