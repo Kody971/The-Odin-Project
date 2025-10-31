@@ -1,3 +1,7 @@
+const arithmetic = document.querySelector('.arithmetic')
+const num1 = document.querySelector('.num1')
+const num2 = document.querySelector('.num2')
+
 const reset = () => {
   // do something
 }
@@ -6,70 +10,67 @@ const del = () => {
   // do something
 }
 
-const division = (num1, num2) => {
-  return num1 / num2
+const division = (...val) => {
+  num1.textContent = parseInt(val[0]) / parseInt(val[1])
 }
 
-const multiply = (num1, num2) => {
-  return num1 * num2
+const multiply = (...val) => {
+  num1.textContent = parseInt(val[0]) * parseInt(val[1])
 }
 
-const addition = (num1, num2) => {
-  return num1 + num2
+const addition = (...val) => {
+  num1.textContent = parseInt(val[0]) + parseInt(val[1])
 }
 
-const subtract = (num1, num2) => {
-  return num1 - num2
+const subtract = (...val) => {
+  num1.textContent = parseInt(val[0]) - parseInt(val[1])
 }
 
-const getArithmetic = val => {
-  const arithmetic = document.querySelector('.arithmetic').textContent
-  if (arithmetic) {
-    return result
+const checkArithmetic = val => {
+  if (arithmetic.textContent && num1.textContent && num2.textContent) {
+    return result(val.value)
   }
+  arithmetic.textContent = val.value
+  num1.textContent = num2.textContent
+  num2.textContent = ''
   return val.value
 }
 
 const userInput = val => {
-  const input = document.querySelector('.num2')
-  input.textContent = input.textContent + val.value
+  num2.textContent += val.value
 }
 
-const getNumber = val => {
-  const number1 = document.querySelector('.num1')
-  const number2 = document.querySelector('.num2')
-
-  return [parseint(number1.textContent), parseInt(number2.textContent)]
+const getNumber = () => {
+  return [num1.textContent, num2.textContent]
 }
 
-const result = () => {
-  const arithmeticList = ['division', 'multiply', 'addition', 'subtract']
-
-  // determine num1 num2 arithmetic value
-  // if (arithmetic.includes(val.value)) {
-  //   if (num1Value && num2Value && arithmeticValue) {
-  //   }
-  //   arithmeticValue = val.value
-  //   const total = parseInt(val.value) + baseValueNum2
-  //   num2.textContent = `${total}`
-  //   num2Value += total
-  // } else {
-  //   num1 += val.value
-  // }
-  // const input = []
-
-  // calculating
-  switch (getArithmetic()) {
-    case 'division':
-      return division(num1, num2)
-    case 'multiply':
-      return multiply(num1, num2)
-    case 'addition':
-      return addition(num1, num2)
-    case 'subtract':
-      return subtract(num1, num2)
+const result = val => {
+  if (val == 'total') {
+    console.log('=')
+    switch (arithmetic.textContent) {
+      case '/':
+        num2.textContent = division(getNumber())
+        num1.textContent = ''
+      case 'x':
+        num2.textContent = multiply(getNumber())
+        num1.textContent = ''
+      case '+':
+        num2.textContent = addition(getNumber())
+        num1.textContent = ''
+      case '-':
+        num2.textContent = subtract(getNumber())
+        num1.textContent = ''
+    }
+  } else {
+    switch (arithmetic.textContent) {
+      case '/':
+        num1.textContent = division(getNumber())
+      case 'x':
+        num1.textContent = multiply(getNumber())
+      case '+':
+        num1.textContent = addition(getNumber())
+      case '-':
+        num1.textContent = subtract(getNumber())
+    }
   }
 }
-
-const resultContainer = document.querySelector('.result-container')
-const buttonContainer = document.querySelector('.button-container')
