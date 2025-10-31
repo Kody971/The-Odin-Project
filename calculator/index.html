@@ -16,10 +16,8 @@
         <div></div>
       </div>
       <div class="button-container">
-        <button class="reset" value="reset" onclick="userInput(this)">C</button>
-        <button class="delete" value="delete" onclick="userInput(this)">
-          DEL
-        </button>
+        <button class="reset" value="reset" onclick="reset()">C</button>
+        <button class="delete" value="delete" onclick="del()">DEL</button>
         <button class="division" value="/" onclick="checkArithmetic(this)">
           /
         </button>
@@ -41,9 +39,9 @@
         <button class="number1" value="1" onclick="userInput(this)">1</button>
         <button class="number2" value="2" onclick="userInput(this)">2</button>
         <button class="number3" value="3" onclick="userInput(this)">3</button>
-        <button class="coma" value="coma" onclick="userInput(this)">.</button>
+        <button class="persen" value="." onclick="userInput(this)">.</button>
         <button class="number0" value="0" onclick="userInput(this)">0</button>
-        <button class="total" value="total" onclick="result()">=</button>
+        <button class="total" value="total" onclick="result(this)">=</button>
       </div>
     </div>
   </body>
