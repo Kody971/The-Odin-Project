@@ -420,6 +420,10 @@ label {
   opacity: 0.8;
 }
 
+.hero-container {
+  color: white;
+}
+
 .hero-container a:visited {
   color: white;
 }
